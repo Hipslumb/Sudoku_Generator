@@ -1,26 +1,2 @@
-* text=auto eol=lf
-*.cpp text charset=utf-8
-*.h text charset=utf-8
-*.hpp text charset=utf-8
-*.txt text charset=utf-8
-*.md text charset=utf-8
-*.cs text charset=utf-8
-*.py text charset=utf-8
-*.js text charset=utf-8
-*.json text charset=utf-8
-*.xml text charset=utf-8
-*.yml text charset=utf-8
-*.yaml text charset=utf-8
-*.html text charset=utf-8
-*.css text charset=utf-8
-
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.gif binary
-*.ico binary
-*.pdf binary
-*.exe binary
-*.dll binary
-*.so binary
-*.lib binary
+# Auto detect text files and perform LF normalization
+* text=auto
