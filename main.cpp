@@ -35,8 +35,6 @@ int main() {
 	remove(latin_square,diff);
 	print_81(latin_square);
 
-	all_generator(latin_square);
-	print_81(latin_square);
 
 	return 0;
 }

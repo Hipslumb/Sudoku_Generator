@@ -2,13 +2,13 @@
 
 void remove(int A[9][9], int diff) {
 
-	bool deleted[9][9] = { false };
-	int value;
+	int value, cannot_delete = 0;
 
 	for (int i = 81; i > diff; i--) {
 
 		int row = rand() % 9, col = rand() % 9;
-		if (deleted[row][col] == true) {i++; continue;}
+		if (cannot_delete >= 81 - (81 - i)) break;
+		if (A[row][col] == 0) {i++; continue;}
 
 		value = A[row][col];
 		A[row][col] = 0;
@@ -16,9 +16,10 @@ void remove(int A[9][9], int diff) {
 		if (!one_solution(A)) {
 			i++;
 			A[row][col] = value;
+			cannot_delete++;
 			continue;
 		}
-		deleted[row][col] = true;
+		cannot_delete = 0;
 	}
 }
 
