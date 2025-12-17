@@ -27,7 +27,8 @@ void count_solutions(int tmp[9][9], int& count, int first[9][9]);
 
 void human_solver(int A[9][9]);
 bool one_zero(int A[9][9], int row, int col);
-bool solver_inRow(int A[9][9], int row, int col);
-bool solver_inColom(int A[9][9], int row, int col);
-bool solver_inBlock(int A[9][9], int row, int col);
-bool pensil_marks(int A[9][9], bool marks[9][9][10]);
+bool solver_inRow(int A[9][9], bool marks[9][9][10]);
+bool solver_inColom(int A[9][9], bool marks[9][9][10]);
+bool solver_inBlock(int A[9][9], bool marks[9][9][10]);
+void pensil_marks(int A[9][9], bool marks[9][9][10]);
+bool solving_with_marks(int A[9][9]);
