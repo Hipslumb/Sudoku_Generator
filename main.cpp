@@ -1,7 +1,7 @@
 #include "funcHeaders.h"
 
 void print_81(int A[9][9]) {
-	cout << "\n\n\n\n\n\n";
+	cout << "\n\n";
 	cout << "\t\t\t\t\t+-------+-------+-------+\n";
 	for (int i = 0; i < 9;i++) {
 		cout << "\t\t\t\t\t";
@@ -16,7 +16,7 @@ void print_81(int A[9][9]) {
 		if (i == 2 || i == 5) cout << "\t\t\t\t\t+-------+-------+-------+\n";
 	}
 	cout << "\t\t\t\t\t+-------+-------+-------+\n";
-	cout << "\n\n\n\n\n\n";
+	cout << "\n\n";
 }
 
 
@@ -30,5 +30,13 @@ int main() {
 	bool filled = all_generator(latin_square);
 	check_filling(latin_square, filled);
 	print_81(latin_square);
+
+	int diff = 1 + rand() % 81;
+	remove(latin_square,diff);
+	print_81(latin_square);
+
+	all_generator(latin_square);
+	print_81(latin_square);
+
 	return 0;
 }
