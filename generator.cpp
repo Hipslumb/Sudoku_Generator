@@ -43,17 +43,25 @@ void fill_diagonal(int A[9][9]) {
 }
 
 bool already_was(int A[9][9], int key, int row, int col) {
-	//in colom
+	return was_inColom(A,key,row,col) ||
+		was_inRow(A, key, row, col) ||
+		was_inBlock(A, key, row, col);
+}
+bool was_inColom(int A[9][9], int key, int row, int col) {
 	for (int i = 0; i < 9; i++) {
 		if (i == row) continue;
 		if (A[i][col] == key) return true;
 	}
-	//in row
+	return false;
+}
+bool was_inRow(int A[9][9], int key, int row, int col) {
 	for (int j = 0; j < 9; j++) {
 		if (j == col) continue;
 		if (A[row][j] == key) return true;
 	}
-	//in block
+	return false;
+}
+bool was_inBlock(int A[9][9], int key, int row, int col) {
 	int row_start = (row / 3) * 3;
 	int col_start = (col / 3) * 3;
 	for (int i = 0; i < 3; i++) {
@@ -68,6 +76,7 @@ bool already_was(int A[9][9], int key, int row, int col) {
 	}
 	return false;
 }
+
 
 
 bool all_generator(int A[9][9]) {
