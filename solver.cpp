@@ -33,7 +33,7 @@ void human_solver(int A[9][9],int original[9][9], int& difficulty) {
 		if (solver_inBlock(A, marks) ||
 			solver_inRow(A, marks) ||
 			solver_inColom(A, marks)) {
-			difficulty += 2; continue;
+			difficulty += 3; continue;
 		}
 
 		//3. using help dificulty * 1,5 or 2
