@@ -1,6 +1,6 @@
 #include "funcHeaders.h"
 
-void human_solver(int A[9][9],int original[9][9], int& difficulty) {
+void human_solver(int A[9][9],int original[9][9]) {
 	int row, col;
 	while (found_zero(A, row, col)) {
 		bool marks[9][9][10];
@@ -20,7 +20,7 @@ void human_solver(int A[9][9],int original[9][9], int& difficulty) {
 					if (count == 1) {
 						A[i][j] = candidate;
 						skip = true;
-						difficulty++; // slojnost 1
+						diff_update(1);
 						break;
 					}
 				}
@@ -33,14 +33,16 @@ void human_solver(int A[9][9],int original[9][9], int& difficulty) {
 		if (solver_inBlock(A, marks) ||
 			solver_inRow(A, marks) ||
 			solver_inColom(A, marks)) {
-			difficulty += 3; continue;
+			diff_update(2);
+			continue;
 		}
 
 		//3. using help dificulty * 1,5 or 2
 		cout << "Stack in (" << row << "," << col << ").";
 		cout << "\nTOO DIFICULT TO HUMAN, HELP WAS USED\n";
 		A[row][col] = original[row][col];
-		difficulty *= 2;
+		diff_update(3);
+
 	}
 	if (!found_zero(A, row, col)) {
 		cout << "WAS SOLVED LOGICALLY =)\n";

@@ -42,7 +42,7 @@ int main() {
 	remove(latin_square,diff);
 	print_81(latin_square);
 
-	human_solver(latin_square,copy, difficulty);
+	human_solver(latin_square,copy);
 	check_filling(latin_square, filled);
 
 	for (int i = 0;i < 9;i++) {
@@ -55,7 +55,7 @@ int main() {
 	}
 
 	print_81(latin_square);
-	cout << "\t\t\t\t\t     difficulty: " << difficulty << "\n\n";
+	printDif();
 
 	return 0;
 }

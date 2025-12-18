@@ -25,9 +25,10 @@ void remove(int A[9][9], int diff);
 bool one_solution(int A[9][9]);
 void count_solutions(int tmp[9][9], int& count, int first[9][9]);
 
-void human_solver(int A[9][9], int original[9][9], int& difficulty);
+void human_solver(int A[9][9], int original[9][9]);
 bool solver_inRow(int A[9][9], bool marks[9][9][10]);
 bool solver_inColom(int A[9][9], bool marks[9][9][10]);
 bool solver_inBlock(int A[9][9], bool marks[9][9][10]);
 void pensil_marks(int A[9][9], bool marks[9][9][10]);
-
+void diff_update(int key);
+void printDif();
