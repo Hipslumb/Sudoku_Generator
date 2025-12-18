@@ -24,12 +24,12 @@
     <ClCompile Include="remove.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="solver.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="funcHeaders.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="remove.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

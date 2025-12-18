@@ -22,6 +22,7 @@ void print_81(int A[9][9]) {
 int main() {
 	srand(time(0));
 	int latin_square[9][9] = { 0 };
+	int difficulty = 0;
 
 	fill_diagonal(latin_square);
 
@@ -41,8 +42,9 @@ int main() {
 	remove(latin_square,diff);
 	print_81(latin_square);
 
-	human_solver(latin_square,copy);
+	human_solver(latin_square,copy, difficulty);
 	check_filling(latin_square, filled);
+
 	for (int i = 0;i < 9;i++) {
 		for (int j = 0;j < 9;j++) {
 			if (latin_square[i][j] != copy[i][j]) {
@@ -51,7 +53,9 @@ int main() {
 			}
 		}
 	}
+
 	print_81(latin_square);
+	cout << "\t\t\t\t\t     difficulty: " << difficulty << "\n\n";
 
 	return 0;
 }
